@@ -51,10 +51,7 @@ users = {
 }
 
 def gen_id():
-   let = string.ascii_lowercase
-   letters = ''.join(random.choice(let) for i in range(3))
-   numbers = str(random.randint(100,999))
-   return letters + numbers
+  return ''.join([random.choice(string.ascii_letters + string.digits) for n in range(6)])
 
 @app.route('/users', methods=['GET', 'POST', 'DELETE'])
 def get_users():
